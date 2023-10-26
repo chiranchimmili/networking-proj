@@ -36,7 +36,10 @@ def main():
 
     try:
         while True:
-            msg = input()
+            try:
+                msg = input()
+            except EOFError:
+                return
             if not msg:
                 continue
             if msg == ":Exit":
